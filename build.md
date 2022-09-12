@@ -43,12 +43,6 @@ $ sudo apt update
 $ sudo apt install docker.io
 ```
 
-# Configure Docker
-```python
-
-```
-
-
 # Enable GPU in Docker
 ```python
 $ sudo apt install curl
