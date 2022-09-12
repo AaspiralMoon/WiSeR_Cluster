@@ -98,6 +98,7 @@ $ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
 # Install Anaconda
 ```python
 $ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
-$ sh Anaconda3-2022.05-Linux-x86_64.sh
-# Press enter all the way, and type "yes" to run conda init
+$ sh Anaconda3-2022.05-Linux-x86_64.sh # Press enter all the way, and type "yes" to run conda init
+$ source ~/.bashrc
+
 ```
