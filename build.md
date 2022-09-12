@@ -8,7 +8,7 @@ $ sudo apt install nvidia-driver-510
 ```
 
 # Install cuda-11.1 and cudnn-8.0.4
-```
+```python
 # $\color{#0000FF}{Download cuda and cudnn}$
 $ cd /home/downloads
 $ wget 
