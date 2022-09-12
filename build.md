@@ -11,7 +11,7 @@ $ Change the hostname to this format: user-gpu-OS, e.g., renjie-3060-u20, keivan
 # Install GPU driver
 ```python
 $ sudo apt install nvidia-driver-510
-# Run nvidia-smi to check if the driver is working.
+# Reboot the system and run nvidia-smi to check if the driver is working.
 ```
 
 # Install cuda-11.1 and cudnn-8.0.4
