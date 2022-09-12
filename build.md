@@ -25,8 +25,8 @@
 
 # Install Docker
 ```
-- sudo apt update
-- sudo apt install docker.io
+$ sudo apt update
+$ sudo apt install docker.io
 ```
 
 # Configure Docker
