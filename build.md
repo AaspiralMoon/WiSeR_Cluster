@@ -55,7 +55,8 @@
 - sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf, and add: Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 
 # Enable GPU in kubernetes (https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
-- (In all worker nodes) first add one line in /etc/docker/daemon.json: "default-runtime": "nvidia"
+- (In all worker nodes) sudo nano /etc/docker/daemon.json.
+- Add "default-runtime": "nvidia" in the first line.
 - sudo systemctl restart docker
 - (In master nodes) Install nvidia device plugin: 
 	- curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
