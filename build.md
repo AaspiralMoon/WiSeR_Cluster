@@ -5,18 +5,14 @@
 - sudo apt install nvidia-driver-510
 - Run nvidia-smi to check if the driver is working.
 
-# Install cuda and cudnn
-- cuda 11.1
-- cudnn 8.0.4
-
-# Configure cuda
-- gedit source ~/.bashrc
-- source ~/. bashrc
+# Install cuda-11.1
+- sudo nano ~/.bashrc
 - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 - export PATH=$PATH:/usr/local/cuda/bin
 - export CUDA_HOME=/usr/local/cuda
+- source ~/. bashrc
 
-# Configure cudnn
+# Install cudnn-8.0.4
 - sudo cp -a  include/. /usr/local/cuda/include/
 - sudo cp -a lib64/. /usr/local/cuda/lib64/
 - After configuring cuda and cudnn, run nvcc --version to check if cuda is working well.
