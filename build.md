@@ -2,8 +2,10 @@
 - Ubuntu20.04 LTS
 
 # Install GPU driver
-- sudo apt install nvidia-driver-510
-- Run nvidia-smi to check if the driver is working.
+```
+$ sudo apt install nvidia-driver-510
+# Run nvidia-smi to check if the driver is working.
+```
 
 # Install cuda-11.1 and cudnn-8.0.4
 ```
