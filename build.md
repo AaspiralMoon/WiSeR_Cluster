@@ -8,20 +8,23 @@
 # Install cuda-11.1 and cudnn-8.0.4
 ```
 # Download cuda and cudnn
-	- cd /home/downloads
-	- wget 
-	- wget
-	- tar -zxvf 
+$ cd /home/downloads
+$ wget 
+$ wget
+$ tar -zxvf 
+
 # Install cuda
-	- sudo nano ~/.bashrc
-	- export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-	- export PATH=$PATH:/usr/local/cuda/bin
-	- export CUDA_HOME=/usr/local/cuda
-	- source ~/. bashrc
+$ sudo nano ~/.bashrc
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+$ export PATH=$PATH:/usr/local/cuda/bin
+$ export CUDA_HOME=/usr/local/cuda
+$ source ~/. bashrc
+
 # Install cudnn
-	- cd cuda
-	- sudo cp -a  include/. /usr/local/cuda/include/
-	- sudo cp -a lib64/. /usr/local/cuda/lib64/
+$ cd cuda
+$ sudo cp -a  include/. /usr/local/cuda/include/
+$ sudo cp -a lib64/. /usr/local/cuda/lib64/
+
 # After configuring cuda and cudnn, run nvcc --version to check if cuda is working well.
 ```
 
