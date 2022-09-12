@@ -94,3 +94,9 @@ $ helm repo add nvdp https://nvidia.github.io/k8s-device-plugin \
    && helm repo update
 $ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
 ```
+
+# Install Anaconda
+```python
+$ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
+$ sh Anaconda3-2022.05-Linux-x86_64.sh
+```
