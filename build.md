@@ -9,7 +9,7 @@ $ sudo apt install nvidia-driver-510
 
 # Install cuda-11.1 and cudnn-8.0.4
 ```python
-# $\color{#0000FF}{Download cuda and cudnn}$
+# Download cuda and cudnn
 $ cd /home/downloads
 $ wget 
 $ wget
@@ -31,14 +31,16 @@ $ sudo cp -a lib64/. /usr/local/cuda/lib64/
 ```
 
 # Install Docker
-```
+```python
 $ sudo apt update
 $ sudo apt install docker.io
 ```
 
 # Configure Docker
+```python
 - sudo nano /etc/docker/daemon.json
 - add "exec-opts": ["native.cgroupdriver=systemd"]
+```
 
 # Enable GPU in Docker
 - curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
