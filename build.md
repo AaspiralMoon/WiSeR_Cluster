@@ -10,22 +10,22 @@ $ sudo apt install nvidia-driver-510
 # Install cuda-11.1 and cudnn-8.0.4
 ```python
 # Download cuda and cudnn
-- cd /home/downloads
-- wget 
-- wget
-- tar -zxvf 
+$ cd /home/downloads
+$ wget 
+$ wget
+$ tar -zxvf 
 
 # Install cuda
-- sudo nano ~/.bashrc
-- export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
-- export PATH=$PATH:/usr/local/cuda/bin
-- export CUDA_HOME=/usr/local/cuda
-- source ~/. bashrc
+$ sudo nano ~/.bashrc
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+$ export PATH=$PATH:/usr/local/cuda/bin
+$ export CUDA_HOME=/usr/local/cuda
+$ source ~/. bashrc
 
 # Install cudnn
-- cd cuda
-- sudo cp -a  include/. /usr/local/cuda/include/
-- sudo cp -a lib64/. /usr/local/cuda/lib64/
+$ cd cuda
+$ sudo cp -a  include/. /usr/local/cuda/include/
+$ sudo cp -a lib64/. /usr/local/cuda/lib64/
 
 # After configuring cuda and cudnn, run nvcc --version to check if cuda is working well.
 ```
@@ -38,19 +38,21 @@ $ sudo apt install docker.io
 
 # Configure Docker
 ```python
-- sudo nano /etc/docker/daemon.json
-- add "exec-opts": ["native.cgroupdriver=systemd"]
+$ sudo nano /etc/docker/daemon.json
+$ add "exec-opts": ["native.cgroupdriver=systemd"]
 ```
 
 # Enable GPU in Docker
-- curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
+```python
+$ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
   sudo apt-key add -
-- distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-- curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
+$ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+$ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
   sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-- sudo apt-get update
-- sudo apt-get install -y nvidia-docker2
-- sudo systemctl restart docker
+$ sudo apt-get update
+$ sudo apt-get install -y nvidia-docker2
+$ sudo systemctl restart docker
+```
 
 # Install kubernetes
 - apt-cache policy kubectl  (search for package versions)
