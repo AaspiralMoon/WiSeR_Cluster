@@ -24,10 +24,11 @@
 - After configuring cuda and cudnn, run nvcc --version to check if cuda is working well.
 
 # Install Docker
-'''
+```
 - sudo apt update
 - sudo apt install docker.io
-'''
+```
+
 # Configure Docker
 - sudo nano /etc/docker/daemon.json
 - add "exec-opts": ["native.cgroupdriver=systemd"]
