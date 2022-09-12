@@ -58,7 +58,7 @@
 - Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 
 # Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
-- In all worker nodes:
+- In worker nodes:
 	- sudo nano /etc/docker/daemon.json
 	- add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
 	- sudo systemctl restart docker
