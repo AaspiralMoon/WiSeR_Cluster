@@ -70,5 +70,3 @@
    	- helm repo add nvdp https://nvidia.github.io/k8s-device-plugin \
    && helm repo update
    	- helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
-
-
