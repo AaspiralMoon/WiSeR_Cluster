@@ -19,7 +19,8 @@
 # Configure cudnn
 - sudo cp -a  include/. /usr/local/cuda/include/
 - sudo cp -a lib64/. /usr/local/cuda/lib64/
-- 
+- After configuring cuda and cudnn, run nvcc --version to check if cuda is working well.
+
 # Install Docker
 - sudo apt update
 - sudo apt install docker.io
