@@ -55,31 +55,39 @@ $ sudo systemctl restart docker
 ```
 
 # Install kubernetes
-- apt-cache policy kubectl  (search for package versions)
-- sudo apt-get update
-- sudo apt-get install -y apt-transport-https ca-certificates curl
-- sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-- echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
-- sudo apt-get update
-- sudo apt-get install -y kubelet=1.22.11-00  kubeadm=1.22.11-00 kubectl=1.22.11-00
-- sudo apt-mark hold kubelet kubeadm kubectl
+```python
+$ apt-cache policy kubectl  (search for package versions)
+$ sudo apt-get update
+$ sudo apt-get install -y apt-transport-https ca-certificates curl
+$ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+$ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+$ sudo apt-get update
+$ sudo apt-get install -y kubelet=1.22.11-00  kubeadm=1.22.11-00 kubectl=1.22.11-00
+$ sudo apt-mark hold kubelet kubeadm kubectl
+```
 
 # Configure kubernetes
+```python
 - sudo swapoff -a
 - sudo nano /etc/fstab and comment the "swap" line.
 - sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 - Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
+```
 
 # Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
 - In worker nodes:
-	- sudo nano /etc/docker/daemon.json
-	- add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
-	- sudo systemctl restart docker
+```python
+$ sudo nano /etc/docker/daemon.json
+$ add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
+$ sudo systemctl restart docker
+```
 
 - In master nodes:
-	- curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
+```python
+$ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
    && chmod 700 get_helm.sh \
    && ./get_helm.sh
-   	- helm repo add nvdp https://nvidia.github.io/k8s-device-plugin \
+$ helm repo add nvdp https://nvidia.github.io/k8s-device-plugin \
    && helm repo update
-   	- helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
+$ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
+```
