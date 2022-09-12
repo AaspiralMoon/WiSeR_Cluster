@@ -61,7 +61,8 @@
 - In all worker nodes:
 	- sudo nano /etc/docker/daemon.json
 	- add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
-- sudo systemctl restart docker
+	- sudo systemctl restart docker
+
 - In master nodes:
 	- curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
    && chmod 700 get_helm.sh \
