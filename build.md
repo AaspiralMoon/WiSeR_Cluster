@@ -72,7 +72,7 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 # Configure kubernetes
 ```python
 $ sudo swapoff -a
-$ sudo nano /etc/fstab and comment the "swap" line.
+$ sudo nano /etc/fstab and comment the "/swapfile" line.
 $ sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 $ Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 ```
