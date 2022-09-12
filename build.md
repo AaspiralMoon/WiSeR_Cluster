@@ -48,3 +48,10 @@
 - sudo apt-get update
 - sudo apt-get install -y kubelet=1.22.11-00  kubeadm=1.22.11-00 kubectl=1.22.11-00
 - sudo apt-mark hold kubelet kubeadm kubectl
+
+# Configure kubernetes
+- sudo swapoff -a
+- sudo nano /etc/fstab and comment the "swap" line
+- sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf, and add: Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”:
+
+
