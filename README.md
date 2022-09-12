@@ -1,2 +1,1 @@
-# DistributedTraining
-Demo
+# Welcome to WiSeR cluster
