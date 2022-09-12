@@ -2,8 +2,8 @@
 - Ubuntu20.04 LTS
 
 # Install GPU driver
-- Run command: sudo apt install nvidia-driver-510
-- Run command: nvidia-smi to check if the driver is working.
+- sudo apt install nvidia-driver-510
+- Run nvidia-smi to check if the driver is working.
 
 # Install cuda and cudnn
 - cuda 11.1
@@ -13,4 +13,7 @@
 - sudo apt update
 - sudo apt install docker.io
 
+# Configure Docker
+- sudo nano /etc/docker/daemon.json
+- add "exec-opts": ["native.cgroupdriver=systemd"]
 
