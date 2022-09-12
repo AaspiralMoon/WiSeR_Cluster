@@ -51,7 +51,7 @@
 
 # Configure kubernetes
 - sudo swapoff -a
-- sudo nano /etc/fstab and comment the "swap" line
-- sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf, and add: Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”:
+- sudo nano /etc/fstab and comment the "swap" line.
+- sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf, and add: Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 
 
