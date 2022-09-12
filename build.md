@@ -46,7 +46,7 @@ $ sudo apt install docker.io
 # Configure Docker
 ```python
 $ sudo nano /etc/docker/daemon.json
-$ add "exec-opts": ["native.cgroupdriver=systemd"]
+# add "exec-opts": ["native.cgroupdriver=systemd"]
 ```
 
 # Enable GPU in Docker
