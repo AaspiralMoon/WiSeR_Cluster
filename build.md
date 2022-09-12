@@ -34,7 +34,7 @@ $ cd cuda
 $ sudo cp -a  include/. /usr/local/cuda/include/
 $ sudo cp -a lib64/. /usr/local/cuda/lib64/
 
-# After configuring cuda and cudnn, run nvcc --version to check if cuda is working well.
+# Run nvcc --version to check if cuda is working well.
 ```
 
 # Install Docker
