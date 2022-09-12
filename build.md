@@ -45,8 +45,7 @@ $ sudo apt install docker.io
 
 # Configure Docker
 ```python
-$ sudo nano /etc/docker/daemon.json
-$ add "exec-opts": ["native.cgroupdriver=systemd"]
+
 ```
 
 
@@ -60,6 +59,8 @@ $ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.
   sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 $ sudo apt-get update
 $ sudo apt-get install -y nvidia-docker2
+$ sudo nano /etc/docker/daemon.json
+$ add "exec-opts": ["native.cgroupdriver=systemd"] in the first line (DO NOT forget comma).
 $ sudo systemctl restart docker
 ```
 
