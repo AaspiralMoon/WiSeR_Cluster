@@ -78,14 +78,14 @@ $ sudo apt-mark hold kubelet kubeadm kubectl
 $ sudo swapoff -a
 $ sudo nano /etc/fstab and comment the "swap" line.
 $ sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
-$ Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
+# Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 ```
 
 # Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
 - In worker nodes:
 ```python
 $ sudo nano /etc/docker/daemon.json
-$ add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
+# add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
 $ sudo systemctl restart docker
 ```
 
