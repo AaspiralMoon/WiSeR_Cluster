@@ -52,6 +52,7 @@ $ add "exec-opts": ["native.cgroupdriver=systemd"]
 
 # Enable GPU in Docker
 ```python
+$ sudo apt install curl
 $ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
   sudo apt-key add -
 $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
