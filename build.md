@@ -1,6 +1,12 @@
 # Prepare your operating system (OS)
 - Ubuntu20.04 LTS
 
+# Change the hostname
+```python
+$ sudo nano /etc/hostname
+$ Change the hostname to this format: name-gpu-OS, e.g., renjie-3060-u20, keivan-3080-u20, etc.
+```
+
 # Install GPU driver
 ```python
 $ sudo apt install nvidia-driver-510
