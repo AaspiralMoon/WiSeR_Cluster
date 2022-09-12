@@ -54,7 +54,7 @@ $ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.
 $ sudo apt-get update
 $ sudo apt-get install -y nvidia-docker2
 $ sudo nano /etc/docker/daemon.json
-$ add "exec-opts": ["native.cgroupdriver=systemd"] in the first line (DO NOT forget comma).
+$ add "exec-opts": ["native.cgroupdriver=systemd"], in the first line (DO NOT forget comma).
 $ sudo systemctl restart docker
 ```
 
