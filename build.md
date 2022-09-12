@@ -5,6 +5,7 @@
 ```python
 $ sudo nano /etc/hostname
 $ Change the hostname to this format: name-gpu-OS, e.g., renjie-3060-u20, keivan-3080-u20, etc.
+$ Ctrl+s to save, ctrl+x to exit.
 ```
 
 # Install GPU driver
