@@ -60,7 +60,7 @@
 # Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
 - In all worker nodes:
 	- sudo nano /etc/docker/daemon.json
-	- add "default-runtime": "nvidia" in the first line (DO NOT forget comma).
+	- add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
 - sudo systemctl restart docker
 - In master nodes:
 	- curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
