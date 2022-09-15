@@ -12,9 +12,10 @@ spec:
           annotations:
             sidecar.istio.io/inject: "false"
         spec:
+	  hostNetwork: true
           containers:
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v1
+              image: mcxrj/yolov3-ddp-training:v2
 	      imagePullPolicy: "IfNotPresent"
               command:
                 - python
@@ -38,9 +39,10 @@ spec:
           annotations:
             sidecar.istio.io/inject: "false"
         spec:
+	  hostNetwork: true
           containers: 
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v1
+              image: mcxrj/yolov3-ddp-training:v2
               imagePullPolicy: "IfNotPresent"
               command:
                 - python
