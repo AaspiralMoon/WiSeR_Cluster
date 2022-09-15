@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
             - name: pytorch
-              image: mcxrj/yolov3:v1
+              image: mcxrj/yolov3-ddp-training:v1
 	      imagePullPolicy: "IfNotPresent"
               command:
                 - python
@@ -40,7 +40,7 @@ spec:
         spec:
           containers: 
             - name: pytorch
-              image: mcxrj/yolov3:v1
+              image: mcxrj/yolov3-ddp-training:v1
               imagePullPolicy: "IfNotPresent"
               command:
                 - python
