@@ -19,7 +19,7 @@ spec:
               command:
                 - python
                 - -m
-                - torch.distributed.run
+                - torch.distributed.launch
                 - --nproc_per_node=1
                 - /usr/src/app/train.py
                 - --img=640
@@ -45,7 +45,7 @@ spec:
               command:
                 - python
                 - -m
-                - torch.distributed.run
+                - torch.distributed.launch
                 - --nproc_per_node=1
                 - /usr/src/app/train.py
                 - --img=640
