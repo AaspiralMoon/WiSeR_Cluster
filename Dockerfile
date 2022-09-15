@@ -25,7 +25,7 @@ COPY . /usr/src/app
 # Downloads to user config dir
 ADD https://ultralytics.com/assets/Arial.ttf /root/.config/Ultralytics/
 
-ENTRYPOINT ["python", "-m", "torch.distributed.run"]
+ENTRYPOINT ["python", "-m", "torch.distributed.launch"]
 
 # Set environment variables
 # ENV HOME=/usr/src/app
