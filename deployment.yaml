@@ -1,0 +1,59 @@
+apiVersion: "kubeflow.org/v1"
+kind: "PyTorchJob"
+metadata:
+  name: "yolo-training"
+spec:
+  pytorchReplicaSpecs:
+    Master:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: "false"
+        spec:
+          containers:
+            - name: pytorch
+              image: mcxrj/yolov3:v1
+	      imagePullPolicy: "IfNotPresent"
+              command:
+                - python
+                - -m
+                - torch.distributed.run
+                - --nproc_per_node=1
+                - /usr/src/app/train.py
+                - --img=640
+                - --batch=12
+                - --epochs=20
+                - --data=coco128.yaml
+                - --weights=yolov3.pt
+              resources: 
+                limits:
+                  nvidia.com/gpu: 1
+    Worker:
+      replicas: 2
+      restartPolicy: OnFailure
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: "false"
+        spec:
+          containers: 
+            - name: pytorch
+              image: mcxrj/yolov3:v1
+              imagePullPolicy: "IfNotPresent"
+              command:
+                - python
+                - -m
+                - torch.distributed.run
+                - --nproc_per_node=1
+                - /usr/src/app/train.py
+                - --img=640
+                - --batch=12
+                - --epochs=20
+                - --data=coco128.yaml
+                - --weights=yolov3.pt
+              resources: 
+                limits:
+                  nvidia.com/gpu: 1
+
