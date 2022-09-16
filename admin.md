@@ -9,4 +9,6 @@ $ sudo kubeadm reset
 ```
 
 # Print the join command
+```python
 $ kubeadm token create --print-join-command
+```
