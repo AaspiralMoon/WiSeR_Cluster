@@ -12,50 +12,58 @@ spec:
           annotations:
             sidecar.istio.io/inject: "false"
         spec:
-	  hostNetwork: true
+          hostIPC: true
           containers:
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v2
-	      imagePullPolicy: "IfNotPresent"
-              command:
-                - python
-                - -m
-                - torch.distributed.launch
-                - --nproc_per_node=1
-                - /usr/src/app/train.py
-                - --img=640
-                - --batch=12
-                - --epochs=20
-                - --data=coco128.yaml
-                - --weights=yolov3.pt
-              resources: 
-                limits:
-                  nvidia.com/gpu: 1
-    Worker:
-      replicas: 2
-      restartPolicy: OnFailure
-      template:
-        metadata:
-          annotations:
-            sidecar.istio.io/inject: "false"
-        spec:
-	  hostNetwork: true
-          containers: 
-            - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v2
+              image: mcxrj/yolov3-ddp-training:v5
               imagePullPolicy: "IfNotPresent"
               command:
                 - python
                 - -m
                 - torch.distributed.launch
                 - --nproc_per_node=1
-                - /usr/src/app/train.py
-                - --img=640
-                - --batch=12
-                - --epochs=20
+                - --nnodes=$(WORLD_SIZE)
+                - --node_rank=$(RANK)
+                - --master_addr=$(MASTER_ADDR)
+                - --master_port=$(MASTER_PORT)
+                - train.py
+                - --img=320
+                - --batch-size=24
+                - --epochs=1
+                - --data=coco128.yaml
+                - --weights=yolov3.pt 
+              resources: 
+                limits:
+                  nvidia.com/gpu: 1
+    Worker:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: "false"
+        spec:
+          hostIPC: true
+          containers: 
+            - name: pytorch
+              image: mcxrj/yolov3-ddp-training:v5
+              imagePullPolicy: "IfNotPresent"
+              env:               
+              command:
+                - python
+                - -m
+                - torch.distributed.launch
+                - --nproc_per_node=1
+                - --nnodes=$(WORLD_SIZE)
+                - --node_rank=$(RANK)
+                - --master_addr=$(MASTER_ADDR)
+                - --master_port=$(MASTER_PORT)
+                - train.py
+                - --img=320
+                - --batch-size=24
+                - --epochs=1
                 - --data=coco128.yaml
                 - --weights=yolov3.pt
               resources: 
                 limits:
                   nvidia.com/gpu: 1
-
