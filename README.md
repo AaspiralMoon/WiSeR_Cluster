@@ -9,20 +9,20 @@
   # Prepare your operating system (OS)
 - Ubuntu20.04 LTS
 
-# Change the hostname
+## Change the hostname
 ```python
 $ sudo nano /etc/hostname
 $ Change the hostname to this format: user-gpu-OS, e.g., renjie-3060-u20, keivan-3080-u20, etc.
 # Ctrl+s to save, ctrl+x to exit.
 ```
 
-# Install GPU driver
+## Install GPU driver
 ```python
 $ sudo apt install nvidia-driver-510
 # Reboot the system and run nvidia-smi to check if the driver is working.
 ```
 
-# Install cuda-11.1 and cudnn-8.0.4
+## Install cuda-11.1 and cudnn-8.0.4
 ```python
 # Download cuda and cudnn
 $ cd /home/Downloads
@@ -31,14 +31,14 @@ $ sudo sh cuda_11.1.0_455.23.05_linux.run
 $ wget
 $ tar -zxvf 
 
-# Install cuda
+## Install cuda
 $ sudo nano ~/.bashrc
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 $ export PATH=$PATH:/usr/local/cuda/bin
 $ export CUDA_HOME=/usr/local/cuda
 $ source ~/. bashrc
 
-# Install cudnn
+## Install cudnn
 $ cd cuda
 $ sudo cp -a  include/. /usr/local/cuda/include/
 $ sudo cp -a lib64/. /usr/local/cuda/lib64/
@@ -46,13 +46,13 @@ $ sudo cp -a lib64/. /usr/local/cuda/lib64/
 # Run nvcc --version to check if cuda is working well.
 ```
 
-# Install Docker
+## Install Docker
 ```python
 $ sudo apt update
 $ sudo apt install docker.io
 ```
 
-# Enable GPU in Docker
+## Enable GPU in Docker
 ```python
 $ sudo apt install curl
 $ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
@@ -67,7 +67,7 @@ $ add "exec-opts": ["native.cgroupdriver=systemd"], in the first line (DO NOT fo
 $ sudo systemctl restart docker
 ```
 
-# Install kubernetes
+## Install kubernetes
 ```python
 $ sudo apt-get update
 $ sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -78,7 +78,7 @@ $ sudo apt-get install -y kubelet=1.22.11-00  kubeadm=1.22.11-00 kubectl=1.22.11
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-# Configure kubernetes
+## Configure kubernetes
 ```python
 $ sudo swapoff -a
 $ sudo nano /etc/fstab and comment the "/swapfile" line.
@@ -86,7 +86,7 @@ $ sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 $ Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 ```
 
-# Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
+## Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
 - In worker nodes:
 ```python
 $ sudo nano /etc/docker/daemon.json
@@ -104,7 +104,7 @@ $ helm repo add nvdp https://nvidia.github.io/k8s-device-plugin \
 $ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
 ```
 
-# Install Anaconda
+## Install Anaconda
 ```python
 # Anaconda is recommended to manage deep learning environments.
 $ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
@@ -112,7 +112,7 @@ $ sh Anaconda3-2022.05-Linux-x86_64.sh # Press enter all the way, and type "yes"
 $ source ~/.bashrc
 ```
 
-# Install Pytorch
+## Install Pytorch
 ```python
 # This pytorch version has been tested for 3060 and 3080.
 $ pip install torch==1.7.0+cu110 torchvision==0.8.1+cu110 -f https://download.pytorch.org/whl/torch_stable.html
