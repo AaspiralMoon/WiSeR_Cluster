@@ -5,7 +5,7 @@
 <details>
   <summary>Setup</summary>
   
-  Please follow the following instructions to prepare your desktop. Skip this step if the setup is already done.
+  Please follow the instructions to prepare your desktop. Skip this step if the setup is already done.
 ## Prepare your operating system (OS)
 - Ubuntu20.04 LTS
 
@@ -102,19 +102,5 @@ $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/s
 $ helm repo add nvdp https://nvidia.github.io/k8s-device-plugin \
    && helm repo update
 $ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
-```
-
-## Install Anaconda
-```python
-# Anaconda is recommended to manage deep learning environments.
-$ wget https://repo.anaconda.com/archive/Anaconda3-2022.05-Linux-x86_64.sh
-$ sh Anaconda3-2022.05-Linux-x86_64.sh # Press enter all the way, and type "yes" to run conda init
-$ source ~/.bashrc
-```
-
-## Install Pytorch
-```python
-# This pytorch version has been tested for 3060 and 3080.
-$ pip install torch==1.7.0+cu110 torchvision==0.8.1+cu110 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 </details>
