@@ -135,17 +135,17 @@ Frequently used commands (linux, docker, kubernetes) are listed as follows. Plea
 - sudo no password
   
 ```python
-sudo visudo
-[user] ALL=(ALL) NOPASSWD: ALL
-#ctrl+x to save and exit
+$ sudo visudo
+$ [user] ALL=(ALL) NOPASSWD: ALL
+# ctrl+x to save and exit
 ```
 
 - docker commands without sudo
 
 ```python
-sudo groupadd docker
-sudo usermod -aG docker [user]
-newgrp docker
+$ sudo groupadd docker
+$ sudo usermod -aG docker [user]
+$ newgrp docker
 ```
   
 ### Docker commands
