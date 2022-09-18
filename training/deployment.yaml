@@ -1,7 +1,7 @@
 apiVersion: "kubeflow.org/v1"
 kind: "PyTorchJob"
 metadata:
-  name: "yolov3-ddp-training"
+  name: "yolov3-training"
 spec:
   pytorchReplicaSpecs:
     Worker:
@@ -16,8 +16,7 @@ spec:
           containers: 
             - name: pytorch
               image: mcxrj/yolov3-ddp-training:v6
-              imagePullPolicy: "IfNotPresent"
-              env:               
+              imagePullPolicy: "IfNotPresent"            
               command:
                 - python
                 - train.py
