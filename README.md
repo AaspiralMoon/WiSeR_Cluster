@@ -123,9 +123,14 @@ The cluster is built based on kubernetes, where codes are run in containers. Bef
   <summary>Services</summary>
   
 All services supported by the cluster are listed as follows. Currently training and distributed training have been tested. Non-DL workloads, e.g., matlab, c++, should be supported as well. If you have tested them, please let me know. Examples are included in each part, please go through them first before you start your own piece.
-  
+
+### Workload type
   - [Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/training)
   - [Distributed Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/distributed_training)
+  
+### Other functionalities
+  - Deploy with priority
+  - Resource monitoring
 </details>
 
 <details>
