@@ -22,7 +22,7 @@ $ sudo apt install nvidia-driver-510
 # Reboot the system and run nvidia-smi to check if the driver is working.
 ```
 
-## Install cuda-11.1 and cudnn-8.0.4
+## Install cuda and cudnn
 ```python
 # Download cuda and cudnn
 $ cd /home/Downloads
