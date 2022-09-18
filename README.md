@@ -114,3 +114,14 @@ The cluster is built based on kubernetes, where codes are run in containers. Bef
   - [Docker](https://www.youtube.com/watch?v=3c-iBn73dDE)
   - [Kubernetes](https://www.youtube.com/watch?v=X48VuDVv0do&t=1503s)
 </details>
+
+<details>
+  <summary>Services</summary>
+  
+All services supported by the cluster are listed as follows. Currently it supports inference, training and distributed training.
+  
+  - Inference
+  - Training
+  - Distributed Training
+</details>
+
