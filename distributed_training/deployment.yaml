@@ -15,7 +15,7 @@ spec:
           hostIPC: true
           containers:
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v5
+              image: mcxrj/yolov3-ddp-training:v6
               imagePullPolicy: "IfNotPresent"
               command:
                 - python
@@ -46,7 +46,7 @@ spec:
           hostIPC: true
           containers: 
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v5
+              image: mcxrj/yolov3-ddp-training:v6
               imagePullPolicy: "IfNotPresent"          
               command:
                 - python
