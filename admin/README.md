@@ -1,7 +1,4 @@
-
-<p align="center">
-# Commands for admin
-</p>
+<center># Centered text</center>
 
 <details>
   <summary>Create a kubernetes cluster</summary>
