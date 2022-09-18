@@ -1,7 +1,7 @@
 # Welcome to WiSeR cluster
 <center>
   
-The WiSeR cluster is built by the **[WiSeR group](https://wiser.cas.mcmaster.ca/)** of [Mcmaster University](https://www.mcmaster.ca/), based on kubernetes. It is composed of three 3080 desktops and six 3060 desktops. It aims to provide computing services e.g., deep learning inference, distributed training for group members.</center>
+The WiSeR cluster is built by the **[WiSeR group](https://wiser.cas.mcmaster.ca/)** of [Mcmaster University](https://www.mcmaster.ca/), based on kubernetes. It is composed of three 3080 desktops and six 3060 desktops. It aims to provide computing services e.g., deep learning training and distributed training for group members.</center>
 
 # Documentation
 <details>
@@ -122,9 +122,8 @@ The cluster is built based on kubernetes, where codes are run in containers. Bef
 <details>
   <summary>Services</summary>
   
-All services supported by the cluster are listed as follows. Currently inference, training and distributed training have been tested. Non-DL workloads, e.g., matlab, c++, should be supported as well. If you have tested them, please let me know. Examples are included in each part, please go through them first before you start your own piece.
+All services supported by the cluster are listed as follows. Currently training and distributed training have been tested. Non-DL workloads, e.g., matlab, c++, should be supported as well. If you have tested them, please let me know. Examples are included in each part, please go through them first before you start your own piece.
   
-  - [Inference](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/inference)
   - [Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/training)
   - [Distributed Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/distributed_training)
 </details>
