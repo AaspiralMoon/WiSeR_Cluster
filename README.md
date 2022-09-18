@@ -139,6 +139,14 @@ sudo visudo
 [username] ALL=(ALL) NOPASSWD: ALL
 #ctrl+x to save and exit
 ```
+
+- docker commands without sudo
+
+```python
+sudo groupadd docker
+sudo usermod -aG docker xrj
+newgrp docker
+```
   
 ### Docker commands
   - Create
