@@ -5,5 +5,5 @@
 <details>
   <summary>Setup</summary>
   
-  Please follow setup.md to prepare your desktop. Skip this step if the setup is already done.
+  Please follow the following instructions to prepare your desktop. Skip this step if the setup is already done.
 </details>
