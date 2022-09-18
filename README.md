@@ -125,3 +125,13 @@ All services supported by the cluster are listed as follows. Currently inference
   - Distributed Training
 </details>
 
+<details>
+  <summary>Commands</summary>
+  
+Frequently used docker and kubernetes commands are listed as follows. Please check this part first when you have trouble.
+  
+## Docker commands
+  - Create
+  
+## Kubernetes commands
+</details>
