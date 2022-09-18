@@ -22,7 +22,7 @@ spec:
                 - train.py
                 - --img=640
                 - --batch-size=8
-                - --epochs=1
+                - --epochs=20
                 - --data=coco128.yaml
                 - --weights=yolov3.pt
               resources: 
