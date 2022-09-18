@@ -140,7 +140,7 @@ $ [user] ALL=(ALL) NOPASSWD: ALL
 # ctrl+x to save and exit
 ```
 
-- docker commands without sudo
+- Docker commands without sudo
 
 ```python
 $ sudo groupadd docker
@@ -149,22 +149,15 @@ $ newgrp docker
 ```
   
 ### Docker commands
-
-- check existing docker images
-  
-```python
-$ sudo docker images
-# if you have run the "docker commands without sudo" above, "sudo" can be omitted here.
-```
-  
-- build docker image from dockerfile
+ 
+- Build a docker image from dockerfile
   
 ```python
 $ sudo docker build -f Dockerfile -t name:tag .
 # example: sudo docker build -f Dockerfile -t yolov3:v1 .
 ```
 
-- create a container based on docker image
+- Create a container based on docker image
   
 ```python
 $ sudo docker run --gpus all --network host --ipc host --name yolov3 -v local_path:container_path -it name:tag
@@ -179,9 +172,52 @@ $ sudo docker run --gpus all --network host --ipc host --name yolov3 -v local_pa
 - Bash into container
   
 ```python
-sudo docker exec -it container_name /bin/bash 
+$ sudo docker exec -it container_name /bin/bash 
 # example: sudo docker exec -it yolov3 /bin/bash
 ```
  
+- Check existing docker images
+  
+```python
+$ sudo docker images
+# if you have run the "docker commands without sudo" above, "sudo" can be omitted here.
+```
+
+- Delete a docker image
+  
+```python
+$ sudo docker rmi image_id
+```
+
+- Delete all unused images
+  
+```python
+$ sudo docker image prune --all
+```
+
+- Check running containers
+  
+```python
+$ sudo docker ps
+# run sudo docker ps -a to check all containers
+```
+
+- Stop a running container
+  
+```python
+$ sudo docker stop container_name/container_id
+```
+  
+- Delete a stopped container
+  
+```python
+$ sudo docker rm container_name
+```
+
+- Delete all stopped containers
+  
+```python
+$ sudo docker container prune
+```
 ### Kubernetes commands
 </details>
