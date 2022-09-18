@@ -29,7 +29,7 @@ spec:
                 - train.py
                 - --img=320
                 - --batch-size=24
-                - --epochs=1
+                - --epochs=5
                 - --data=coco128.yaml
                 - --weights=yolov3.pt 
               resources: 
@@ -61,7 +61,7 @@ spec:
                 - train.py
                 - --img=320
                 - --batch-size=24
-                - --epochs=1
+                - --epochs=5
                 - --data=coco128.yaml
                 - --weights=yolov3.pt
               resources: 
