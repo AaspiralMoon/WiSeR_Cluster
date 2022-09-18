@@ -1,5 +1,7 @@
 
-# Commands for admin
+<p align="center">
+Commands for admin
+</p>
 
 <details>
   <summary>Create a kubernetes cluster</summary>
