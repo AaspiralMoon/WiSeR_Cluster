@@ -3,9 +3,9 @@
 
 <details>
   <summary>Create a kubernetes cluster</summary>
-  ```python
+  <pre><blockcode> 
   $ sudo kubeadm init --apiserver-advertise-address=xxx.xxx.xx.xx --pod-network-cidr=xxx.xxx.0.0/16
-  ```
+  <blockcode><pre> 
 </details>
 
 
