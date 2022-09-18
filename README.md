@@ -219,5 +219,39 @@ $ sudo docker rm container_name
 ```python
 $ sudo docker container prune
 ```
-### Kubernetes commands
+### Kubernetes commands (run on master node)
+  
+- Check all nodes in the cluster
+  
+```python
+$ kubectl get nodes -o wide
+```
+  
+- Check running pods in the cluster
+  
+```python
+$ kubectl get pods -o wide
+# run kubectl get pods -A to check all pods
+```
+
+- Check running services in the cluster
+  
+```python
+$ kubectl get services -o wide
+# run kubectl get services -A to check all services
+```
+  
+- Delete a pod
+  
+```python
+$ kubectl delete pods pod_name
+# run kubectl delete pods pod_name --grace-period=0 --force to forcefully delete a pod (run this command to delete pods stuck in "terminating" status
+```
+  
+- Create and delete an deployment (most frequently used commands)
+  
+```python
+$ kubectl apply -f deployment.yaml
+$ kubectl delete -f deployment.yaml
+```
 </details>
