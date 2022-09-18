@@ -1,6 +1,6 @@
 
 <p align="center">
-Commands for admin
+# Commands for admin
 </p>
 
 <details>
