@@ -137,7 +137,7 @@ Frequently used commands (linux, docker, kubernetes) are listed as follows. Plea
 ```python
 sudo visudo
 [username] ALL=(ALL) NOPASSWD: ALL
-# ctrl+x to save and exit
+#ctrl+x to save and exit
 ```
   
 ### Docker commands
