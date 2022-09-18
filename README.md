@@ -33,14 +33,14 @@ $ sudo sh cuda_11.1.0_455.23.05_linux.run
 $ wget
 $ tar -zxvf 
 
-### Install cuda
+# Install cuda
 $ sudo nano ~/.bashrc
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 $ export PATH=$PATH:/usr/local/cuda/bin
 $ export CUDA_HOME=/usr/local/cuda
 $ source ~/. bashrc
 
-### Install cudnn
+# Install cudnn
 $ cd cuda
 $ sudo cp -a  include/. /usr/local/cuda/include/
 $ sudo cp -a lib64/. /usr/local/cuda/lib64/
@@ -90,7 +90,7 @@ $ Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the l
 
 ### Enable GPU in kubernetes
 
-- on worker nodes
+- Run on worker nodes
 
 ```python
 $ sudo nano /etc/docker/daemon.json
@@ -98,7 +98,7 @@ $ add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
 $ sudo systemctl restart docker
 ```
   
-- on worker nodes
+- Run on worker nodes
 
 ```python
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
