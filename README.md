@@ -118,7 +118,7 @@ The cluster is built based on kubernetes, where codes are run in containers. Bef
 <details>
   <summary>Services</summary>
   
-All services supported by the cluster are listed as follows. Currently it supports inference, training and distributed training.
+All services supported by the cluster are listed as follows. Currently inference, training and distributed training have been tested. Non-DL workloads, e.g., matlab, c++, should be supported as well. If you have tested them, please let me know.
   
   - Inference
   - Training
