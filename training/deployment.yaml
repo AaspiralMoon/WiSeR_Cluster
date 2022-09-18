@@ -1,0 +1,31 @@
+apiVersion: "kubeflow.org/v1"
+kind: "PyTorchJob"
+metadata:
+  name: "yolov3-ddp-training"
+spec:
+  pytorchReplicaSpecs:
+    Worker:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: "false"
+        spec:
+          hostIPC: true
+          containers: 
+            - name: pytorch
+              image: mcxrj/yolov3-ddp-training:v6
+              imagePullPolicy: "IfNotPresent"
+              env:               
+              command:
+                - python
+                - train.py
+                - --img=640
+                - --batch-size=8
+                - --epochs=1
+                - --data=coco128.yaml
+                - --weights=yolov3.pt
+              resources: 
+                limits:
+                  nvidia.com/gpu: 1
