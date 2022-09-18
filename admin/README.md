@@ -10,7 +10,7 @@
 
 
 <details>
-  <summary>Create a kubernetes cluster</summary>
+  <summary>Reset a kubernetes cluster</summary>
   
   ```python
   sudo kubeadm reset
@@ -18,7 +18,7 @@
 </details>
 
 <details>
-  <summary>Create a kubernetes cluster</summary>
+  <summary>Print the join command</summary>
   
   ```python
   kubeadm token create --print-join-command
