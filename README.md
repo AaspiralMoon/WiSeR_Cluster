@@ -1,4 +1,4 @@
-<center><big><b>Welcome to WiSeR cluster</big></b></center>
+<center><big><b>Welcome to WiSeR cluster</b></big></center>
 
 <details>
 <summary>Title</summary>
