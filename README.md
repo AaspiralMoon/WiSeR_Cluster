@@ -160,14 +160,14 @@ $ sudo docker images
 - build docker image from dockerfile
   
 ```python
-sudo docker build -f Dockerfile -t name:tag .
+$ sudo docker build -f Dockerfile -t name:tag .
 # example: sudo docker build -f Dockerfile -t yolov3:v1 .
 ```
 
 - create a container based on docker image
   
 ```python
-sudo docker run --gpus all --network host --ips host --name yolov3 -v local_path:container_path -it name:tag
+$ sudo docker run --gpus all --network host --ipc host --name yolov3 -v local_path:container_path -it name:tag
 # example: sudo docker run --gpus all --network host --ipc host --name yolov3 -v /home/renjie/projects/datasets:/usr/src/app/datasets -it yolov3:v1
 # --gpus all enable gpu access in container
 # --network host enable container to use local network
@@ -175,7 +175,13 @@ sudo docker run --gpus all --network host --ips host --name yolov3 -v local_path
 # -v mount local directory to container, usually mount dataset to container
 # -it run an interactive instance
 ```
+
+- Bash into container
   
-  
+```python
+sudo docker exec -it container_name /bin/bash 
+# example: sudo docker exec -it yolov3 /bin/bash
+```
+ 
 ### Kubernetes commands
 </details>
