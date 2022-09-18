@@ -128,7 +128,17 @@ All services supported by the cluster are listed as follows. Currently inference
 <details>
   <summary>Commands</summary>
   
-Frequently used docker and kubernetes commands are listed as follows. Please check this part first when you have trouble.
+Frequently used commands (linux, docker, kubernetes) are listed as follows. Please check this part first when you have trouble.
+
+### Linux commands
+
+- sudo no password
+  
+```python
+sudo visudo
+[username] ALL=(ALL) NOPASSWD: ALL
+# ctrl+x to save and exit
+```
   
 ### Docker commands
   - Create
