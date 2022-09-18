@@ -108,6 +108,7 @@ $ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
 
 <details>
   <summary>Tutorials</summary>
+  
 The cluster is built based on kubernetes, where codes are run in containers. Before you get started, please go through the following tutorials and get familiar with the basic concepts of [docker](https://www.docker.com/) and [kubernetes](https://kubernetes.io/).
   
   - [Docker](https://www.youtube.com/watch?v=3c-iBn73dDE)
