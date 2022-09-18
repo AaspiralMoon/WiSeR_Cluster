@@ -128,7 +128,7 @@ All services supported by the cluster are listed as follows. Currently training 
   - [Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/training)
   - [Distributed Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/distributed_training)
   
-### Other Functionalities
+### Other Functionalities (under test)
   - Deploy with priority
   - Resource monitoring
 </details>
