@@ -167,8 +167,13 @@ sudo docker build -f Dockerfile -t name:tag .
 - create a container based on docker image
   
 ```python
-sudo docker run --gpus all --name yolov3 -v local_path:container_path -d -t name:tag
-# example: sudo docker run --gpus all --name yolov3 -v /home/xrj/projects/yolov3:/usr/src/app -d -t yolov3:v1
+sudo docker run --gpus all --network host --ips host --name yolov3 -v local_path:container_path -it name:tag
+# example: sudo docker run --gpus all --network host --ipc host --name yolov3 -v /home/renjie/projects/datasets:/usr/src/app/datasets -it yolov3:v1
+# --gpus all enable gpu access in container
+# --network host enable container to use local network
+# --ipc host enable container to share memory with host system
+# -v mount local directory to container, usually mount dataset to container
+# -it run an interactive instance
 ```
   
   
