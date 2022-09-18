@@ -98,7 +98,7 @@ $ add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
 $ sudo systemctl restart docker
 ```
   
-- Run on worker nodes
+- Run on master nodes
 
 ```python
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
