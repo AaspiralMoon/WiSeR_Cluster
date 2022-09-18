@@ -6,7 +6,7 @@
   <summary>Setup</summary>
   
   Please follow the following instructions to prepare your desktop. Skip this step if the setup is already done.
-  # Prepare your operating system (OS)
+## Prepare your operating system (OS)
 - Ubuntu20.04 LTS
 
 ## Change the hostname
