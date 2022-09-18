@@ -7,7 +7,7 @@
   
   Please follow the instructions to prepare your desktop. Skip this step if the setup is already done.
 - Prepare your operating system (OS)
-- Ubuntu20.04 LTS
+  - Ubuntu20.04 LTS
 
 - Change the hostname
 ```python
@@ -16,13 +16,13 @@ $ Change the hostname to this format: user-gpu-OS, e.g., renjie-3060-u20, keivan
 # Ctrl+s to save, ctrl+x to exit.
 ```
 
-## Install GPU driver
+- Install GPU driver
 ```python
 $ sudo apt install nvidia-driver-510
 # Reboot the system and run nvidia-smi to check if the driver is working.
 ```
 
-## Install cuda and cudnn
+- Install cuda and cudnn
 ```python
 # Download cuda and cudnn
 $ cd /home/Downloads
@@ -31,14 +31,14 @@ $ sudo sh cuda_11.1.0_455.23.05_linux.run
 $ wget
 $ tar -zxvf 
 
-## Install cuda
+- Install cuda
 $ sudo nano ~/.bashrc
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 $ export PATH=$PATH:/usr/local/cuda/bin
 $ export CUDA_HOME=/usr/local/cuda
 $ source ~/. bashrc
 
-## Install cudnn
+- Install cudnn
 $ cd cuda
 $ sudo cp -a  include/. /usr/local/cuda/include/
 $ sudo cp -a lib64/. /usr/local/cuda/lib64/
@@ -46,13 +46,13 @@ $ sudo cp -a lib64/. /usr/local/cuda/lib64/
 # Run nvcc --version to check if cuda is working well.
 ```
 
-## Install Docker
+- Install Docker
 ```python
 $ sudo apt update
 $ sudo apt install docker.io
 ```
 
-## Enable GPU in Docker
+- Enable GPU in Docker
 ```python
 $ sudo apt install curl
 $ curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
@@ -67,7 +67,7 @@ $ add "exec-opts": ["native.cgroupdriver=systemd"], in the first line (DO NOT fo
 $ sudo systemctl restart docker
 ```
 
-## Install kubernetes
+- Install kubernetes
 ```python
 $ sudo apt-get update
 $ sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -78,7 +78,7 @@ $ sudo apt-get install -y kubelet=1.22.11-00  kubeadm=1.22.11-00 kubectl=1.22.11
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-## Configure kubernetes
+- Configure kubernetes
 ```python
 $ sudo swapoff -a
 $ sudo nano /etc/fstab and comment the "/swapfile" line.
@@ -86,15 +86,15 @@ $ sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 $ Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 ```
 
-## Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
-- In worker nodes:
+- Enable GPU in kubernetes: [related webpage](https://docs.nvidia.com/datacenter/cloud-native/kubernetes/install-k8s.html)
+  - In worker nodes:
 ```python
 $ sudo nano /etc/docker/daemon.json
 $ add "default-runtime": "nvidia", in the first line (DO NOT forget comma).
 $ sudo systemctl restart docker
 ```
 
-- In master nodes:
+  - In master nodes:
 ```python
 $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 \
    && chmod 700 get_helm.sh \
