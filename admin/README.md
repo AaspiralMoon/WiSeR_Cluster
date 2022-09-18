@@ -1,11 +1,11 @@
 
-# Create a kubernetes cluster
+# 
 
 <details>
-<summary>Title</summary>
-```python
-$ sudo kubeadm init --apiserver-advertise-address=xxx.xxx.xx.xx --pod-network-cidr=xxx.xxx.0.0/16
-```
+  <summary>Create a kubernetes cluster</summary>
+  ```python
+  $ sudo kubeadm init --apiserver-advertise-address=xxx.xxx.xx.xx --pod-network-cidr=xxx.xxx.0.0/16
+  ```
 </details>
 
 
