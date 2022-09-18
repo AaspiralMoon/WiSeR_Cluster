@@ -6,10 +6,10 @@
   <summary>Setup</summary>
   
   Please follow the instructions to prepare your desktop. Skip this step if the setup is already done.
-## Prepare your operating system (OS)
+- Prepare your operating system (OS)
 - Ubuntu20.04 LTS
 
-## Change the hostname
+- Change the hostname
 ```python
 $ sudo nano /etc/hostname
 $ Change the hostname to this format: user-gpu-OS, e.g., renjie-3060-u20, keivan-3080-u20, etc.
