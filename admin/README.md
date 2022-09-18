@@ -3,7 +3,7 @@
 
 <details>
   <summary>Create a kubernetes cluster</summary>
-  </pre></code> 
+  <pre><code> 
   $ sudo kubeadm init --apiserver-advertise-address=xxx.xxx.xx.xx --pod-network-cidr=xxx.xxx.0.0/16
   </code></pre> 
 </details>
