@@ -1,4 +1,4 @@
-<center># Centered text</center>
+<center> Centered text</center>
 
 <details>
   <summary>Create a kubernetes cluster</summary>
