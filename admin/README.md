@@ -1,6 +1,4 @@
-<p align="center">
- # 111
-</p>
+Commands for admin
 
 <details>
   <summary>Create a kubernetes cluster</summary>
@@ -11,12 +9,19 @@
 </details>
 
 
-# Reset the cluster
-```python
-$ sudo kubeadm reset
-```
+<details>
+  <summary>Create a kubernetes cluster</summary>
+  
+  ```python
+  sudo kubeadm reset
+  ```
+</details>
 
-# Print the join command
-```python
-$ kubeadm token create --print-join-command
-```
+<details>
+  <summary>Create a kubernetes cluster</summary>
+  
+  ```python
+  kubeadm token create --print-join-command
+  ```
+</details>
+
