@@ -8,17 +8,17 @@ The WiSeR cluster is built by the **[WiSeR group](https://wiser.cas.mcmaster.ca/
   <summary>Setup</summary>
   
   Please follow the instructions to prepare your desktop. Skip this step if the setup is already done.
-### Prepare your operating system (OS)
+### Prepare Your Operating System (OS)
   - Ubuntu20.04 LTS
 
-### Change the hostname
+### Change the Hostname
 ```python
 $ sudo nano /etc/hostname
 $ Change the hostname to this format: user-gpu-OS, e.g., renjie-3060-u20, keivan-3080-u20, etc.
 # Ctrl+s to save, ctrl+x to exit.
 ```
 
-### Install GPU driver
+### Install GPU Driver
 ```python
 $ sudo apt install nvidia-driver-510
 # Reboot the system and run nvidia-smi to check if the driver is working.
@@ -69,7 +69,7 @@ $ add "exec-opts": ["native.cgroupdriver=systemd"], in the first line (DO NOT fo
 $ sudo systemctl restart docker
 ```
 
-### Install kubernetes
+### Install Kubernetes
 ```python
 $ sudo apt-get update
 $ sudo apt-get install -y apt-transport-https ca-certificates curl
@@ -80,7 +80,7 @@ $ sudo apt-get install -y kubelet=1.22.11-00  kubeadm=1.22.11-00 kubectl=1.22.11
 $ sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-### Configure kubernetes
+### Configure Kubernetes
 ```python
 $ sudo swapoff -a
 $ sudo nano /etc/fstab and comment the "/swapfile" line.
@@ -88,7 +88,7 @@ $ sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 $ Add Environment=”cgroup-driver=systemd/cgroup-driver=cgroupfs” after the last “Environment Variable”.
 ```
 
-### Enable GPU in kubernetes
+### Enable GPU in Kubernetes
 
 - Run on worker nodes
 
@@ -124,11 +124,11 @@ The cluster is built based on kubernetes, where codes are run in containers. Bef
   
 All services supported by the cluster are listed as follows. Currently training and distributed training have been tested. Non-DL workloads, e.g., matlab, c++, should be supported as well. If you have tested them, please let me know. Examples are included in each part, please go through them first before you start your own piece.
 
-### Workload type
+### Workload Type
   - [Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/training)
   - [Distributed Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/distributed_training)
   
-### Other functionalities
+### Other Functionalities
   - Deploy with priority
   - Resource monitoring
 </details>
@@ -138,7 +138,7 @@ All services supported by the cluster are listed as follows. Currently training 
   
 Frequently used commands (linux, docker, kubernetes) are listed as follows. Please check this part first when you have trouble.
 
-### Linux commands
+### Linux Commands
 
 - sudo no password
   
@@ -156,7 +156,7 @@ $ sudo usermod -aG docker [user]
 $ newgrp docker
 ```
   
-### Docker commands
+### Docker Commands
  
 - Build a docker image from dockerfile
   
@@ -227,7 +227,7 @@ $ sudo docker rm container_name
 ```python
 $ sudo docker container prune
 ```
-### Kubernetes commands (run on master node)
+### Kubernetes Commands (run on master node)
   
 - Check all nodes in the cluster
   
