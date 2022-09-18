@@ -149,7 +149,28 @@ $ newgrp docker
 ```
   
 ### Docker commands
-  - Create
+
+- check existing docker images
+  
+```python
+$ sudo docker images
+# if you have run the "docker commands without sudo" above, "sudo" can be omitted here.
+```
+  
+- build docker image from dockerfile
+  
+```python
+sudo docker build -f Dockerfile -t name:tag .
+# example: sudo docker build -f Dockerfile -t yolov3:v1 .
+```
+
+- create a container based on docker image
+  
+```python
+sudo docker run --gpus all --name yolov3 -v local_path:container_path -d -t name:tag
+# example: sudo docker run --gpus all --name yolov3 -v /home/xrj/projects/yolov3:/usr/src/app -d -t yolov3:v1
+```
+  
   
 ### Kubernetes commands
 </details>
