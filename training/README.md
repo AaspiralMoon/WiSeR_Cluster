@@ -40,3 +40,8 @@ $ kubectl logs pod_name # use this command to check the training status
 ```python
 $ kubectl cp pod_name:remote_path local_path
 ```
+
+### Delete the deployment
+```python
+$ kubectl delete -f deployment.yaml
+```
