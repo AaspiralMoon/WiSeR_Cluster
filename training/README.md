@@ -20,7 +20,7 @@ $ sudo docker build -f Dockerfile -t yolov3-training:v1 .  # it will take severa
 $ sudo docker images # check if the image has been built
 ```
 
-### Tag the image and push to your DockerHub
+### Tag the image and push it to your DockerHub
 ```python
 $ sudo docker images # find the image_id
 $ sudo docker tag image_id username/name:tag # example: sudo docker tag image_id renjie/yolov3-training:v1
