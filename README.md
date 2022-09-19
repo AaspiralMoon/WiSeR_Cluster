@@ -262,4 +262,16 @@ $ kubectl delete pods pod_name
 $ kubectl apply -f deployment.yaml
 $ kubectl delete -f deployment.yaml
 ```
+
+- Check the log of a pod
+  
+```python
+$ kubectl logs pod_name
+```
+
+- Check the description of a pod
+  
+```python
+$ kubectl describe pod pod_name
+```
 </details>
