@@ -1,9 +1,9 @@
+![wisercluster](https://user-images.githubusercontent.com/93042200/190935385-4cbb4096-a50e-4f56-b1d5-7b3d8b1ebd9b.jpg)
+
 # Welcome to WiSeR cluster
 <center>
   
 The WiSeR cluster is built by the **[WiSeR group](https://wiser.cas.mcmaster.ca/)** of [Mcmaster University](https://www.mcmaster.ca/), based on kubernetes. It is composed of three 3080 desktops and six 3060 desktops. It aims to provide computing services e.g., deep learning training and distributed training for group members.</center>
-
-![wisercluster](https://user-images.githubusercontent.com/93042200/190935385-4cbb4096-a50e-4f56-b1d5-7b3d8b1ebd9b.jpg)
 
 # Documentation
 <details>
