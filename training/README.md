@@ -35,3 +35,12 @@ $ kubectl apply -f deployment.yaml  # run this command on the master node
 $ kubectl get pods -o wide # check the pods running status and the scheduled nodes.
 $ kubectl logs pod_name # use this command to check the training status
 ```
+
+### Get the weight file out of the container
+```python
+# In deployment.yaml, you have to change the "image: user_name/name:tag" based on your setup.
+# Or you can use my image, "mcxrj/yolov3-ddp-training:v6"
+$ kubectl apply -f deployment.yaml  # run this command on the master node
+$ kubectl get pods -o wide # check the pods running status and the scheduled nodes.
+$ kubectl logs pod_name # use this command to check the training status
+```
