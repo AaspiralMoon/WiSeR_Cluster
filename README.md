@@ -1,4 +1,5 @@
-![wisercluster](https://user-images.githubusercontent.com/93042200/190935385-4cbb4096-a50e-4f56-b1d5-7b3d8b1ebd9b.jpg)
+![wisercluster](https://user-images.githubusercontent.com/93042200/190935672-55df5e0e-a539-4b56-b44c-a5c05f4b6e82.jpg)
+
 
 # Welcome to WiSeR cluster
 <center>
