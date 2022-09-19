@@ -4,9 +4,9 @@
   
 The WiSeR cluster is built by the **[WiSeR group](https://wiser.cas.mcmaster.ca/)** of [Mcmaster University](https://www.mcmaster.ca/), based on kubernetes. It is composed of three 3080 desktops and six 3060 desktops. It aims to provide computing services e.g., deep learning training and distributed training for group members.</center>
 
-<h1 align="center">Documentation</h1>
+<h1 align="center">:rainbow:Documentation:rainbow:</h1>
 <details>
-  <summary>Setup</summary>
+  <summary>Setup:doughnut:</summary>
   
   Please follow the instructions to prepare your desktop. Skip this step if the setup is already done.
 ### Prepare Your Operating System (OS)
@@ -112,7 +112,7 @@ $ helm install --generate-name nvdp/nvidia-device-plugin --namespace kube-system
 </details>
 
 <details>
-  <summary>Tutorials</summary>
+  <summary>Tutorials:cake:</summary>
   
 The cluster is built based on kubernetes, where codes are run in containers. Before you get started, please go through the following tutorials and get familiar with the basic concepts of [docker](https://www.docker.com/) and [kubernetes](https://kubernetes.io/). Do not be afraid, they are easy! :smile:
   
@@ -121,13 +121,13 @@ The cluster is built based on kubernetes, where codes are run in containers. Bef
 </details>
 
 <details>
-  <summary>Services</summary>
+  <summary>Services:icecream:</summary>
   
 All services supported by the cluster are listed as follows. Currently training and distributed training have been tested. Non-DL workloads, e.g., matlab, c++, should be supported as well. If you have tested them, please let me know. Examples are included in each part, please go through them first before you start your own piece.
 
 ### Workload Type
   - [Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/training)
-  - [Distributed Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/distributed_training)
+  - [Distributed Training](https://github.com/AaspiralMoon/WiSeR_Cluster/tree/master/distributed_training):fire:
   
 ### Other Functionalities (under test)
   - Deploy with priority
@@ -135,7 +135,7 @@ All services supported by the cluster are listed as follows. Currently training 
 </details>
 
 <details>
-  <summary>Commands</summary>
+  <summary>Commands:candy:</summary>
   
 Frequently used commands (linux, docker, kubernetes) are listed as follows. Please check this part first when you have trouble.
 
