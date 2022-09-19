@@ -15,7 +15,7 @@ spec:
           hostIPC: true
           containers: 
             - name: pytorch
-              image: your_user_name/name:tag
+              image: user_name/name:tag
               imagePullPolicy: "IfNotPresent"            
               command:
                 - python
