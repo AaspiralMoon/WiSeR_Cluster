@@ -263,7 +263,7 @@ $ kubectl apply -f deployment.yaml
 $ kubectl delete -f deployment.yaml
 ```
 
-- Check the log of a pod
+- Check the logs information of a pod
   
 ```python
 $ kubectl logs pod_name
