@@ -275,4 +275,11 @@ $ kubectl logs pod_name
 ```python
 $ kubectl describe pod pod_name
 ```
+
+- Bash into a running pod
+  
+```python
+$ kubectl exec --stdin --tty pod_name -- /bin/bash
+```
+
 </details>
