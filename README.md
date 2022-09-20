@@ -132,6 +132,7 @@ All services supported by the cluster are listed as follows. Currently training 
 ### Other Functionalities (under test)
   - Deploy with priority
   - Resource monitoring
+  - Garbage cleaning
 </details>
 
 <details>
