@@ -1,2 +1,2 @@
-kubeadm join 130.113.70.172:6443 --token bya55j.6oz3gj0ma4azel99 \
-	--discovery-token-ca-cert-hash sha256:d59830f52a3d2838de6c04362862710226aa1d4534251dc734cf29f16865cceb
+kubeadm join 130.113.70.172:6443 --token t4yd4r.fey398flei0xw46y \
+	--discovery-token-ca-cert-hash sha256:fbe6ef2b45b7a6e47430901a24405af191798cfaa95fc382ab5a60b4d1c3be5a
