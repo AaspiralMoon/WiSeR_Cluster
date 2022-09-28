@@ -13,7 +13,9 @@
   <summary>Reset a kubernetes cluster</summary>
   
   ```python
-  sudo kubeadm reset
+  # run on both master nodes and worker nodes
+  sudo kubeadm reset -f
+  sudo rm -rf /etc/cni/net.d && sudo rm -rf $HOME/.kube/config
   ```
 </details>
 
