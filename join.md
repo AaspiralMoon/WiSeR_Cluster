@@ -1,2 +1,2 @@
-kubeadm join 130.113.70.172:6443 --token 5qiz1r.b1e1ovufhonqnn7y \
-	--discovery-token-ca-cert-hash sha256:eb6c7bcd52173d3f780efc5cd207fa191be1bedc8562a4c8f448288b75d9eb01
+sudo kubeadm join 130.113.70.172:6443 --token sg38la.jpf42lbi0wvlre2g \
+	--discovery-token-ca-cert-hash sha256:d101676750170ae2d9b5f57bd61e3baa7cc6fe7d8a9541ea08921dc413f28438
