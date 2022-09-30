@@ -15,7 +15,7 @@ spec:
           hostIPC: true
           containers:
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v6
+              image: mcxrj/yolov3-ddp-training:v7
               imagePullPolicy: "IfNotPresent"
               command:
                 - python
@@ -29,14 +29,14 @@ spec:
                 - train.py
                 - --img=320
                 - --batch-size=24
-                - --epochs=1
+                - --epochs=20
                 - --data=coco128.yaml
                 - --weights=yolov3.pt 
               resources: 
                 limits:
                   nvidia.com/gpu: 1
     Worker:
-      replicas: 1
+      replicas: 2
       restartPolicy: OnFailure
       template:
         metadata:
@@ -46,8 +46,8 @@ spec:
           hostIPC: true
           containers: 
             - name: pytorch
-              image: mcxrj/yolov3-ddp-training:v6
-              imagePullPolicy: "IfNotPresent"          
+              image: mcxrj/yolov3-ddp-training:v7
+              imagePullPolicy: "IfNotPresent"             
               command:
                 - python
                 - -m
@@ -60,7 +60,7 @@ spec:
                 - train.py
                 - --img=320
                 - --batch-size=24
-                - --epochs=1
+                - --epochs=20
                 - --data=coco128.yaml
                 - --weights=yolov3.pt
               resources: 
