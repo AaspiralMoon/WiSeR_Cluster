@@ -4,7 +4,7 @@
   <summary>Create a kubernetes cluster</summary>
   
   ```python
-  sudo kubeadm init --apiserver-advertise-address=xxx.xxx.xx.xx --pod-network-cidr=xxx.xxx.0.0/16
+  sudo kubeadm init --apiserver-advertise-address=xxx.xxx.xx.xx --pod-network-cidr=192.168.0.0/16
   ```
 </details>
 
