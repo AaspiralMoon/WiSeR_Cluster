@@ -1,0 +1,90 @@
+apiVersion: "kubeflow.org/v1"
+kind: "PyTorchJob"
+metadata:
+  name: "yolov3-ddp-training"
+spec:
+  pytorchReplicaSpecs:
+    Master:
+      replicas: 1
+      restartPolicy: OnFailure
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: "false"
+        spec:
+          hostIPC: true
+          volumes:
+            - name: datasets
+              nfs:
+                server: 130.113.70.172
+                path: /mnt/nfs_host/datasets/renjie
+            - name: models
+              nfs:
+                server: 130.113.70.172
+                path: /mnt/nfs_host/models/renjie
+          containers:
+            - name: pytorch
+              image: mcxrj/yolov3-ddp-training:v8
+              imagePullPolicy: "IfNotPresent"
+              command:
+                - python
+                - -m
+                - torch.distributed.launch
+                - --nproc_per_node=1
+                - --nnodes=$(WORLD_SIZE)
+                - --node_rank=$(RANK)
+                - --master_addr=$(MASTER_ADDR)
+                - --master_port=$(MASTER_PORT)
+                - train.py
+                - --img=320
+                - --batch-size=24
+                - --epochs=20
+                - --data=coco128.yaml
+                - --weights=yolov3.pt
+              resources:
+                limits:
+                  nvidia.com/gpu: 1
+              volumeMounts:
+                - mountPath: /usr/src/app/datasets/
+                  name: datasets
+                - mountPath: /usr/src/app/runs/
+                  name: models
+    Worker:
+      replicas: 2
+      restartPolicy: OnFailure
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: "false"
+        spec:
+          hostIPC: true
+          volumes:
+            - name: datasets
+              nfs:
+                server: 130.113.70.172
+                path: /mnt/nfs_host/datasets/renjie
+          containers:
+            - name: pytorch
+              image: mcxrj/yolov3-ddp-training:v8
+              imagePullPolicy: "IfNotPresent"
+              command:
+                - python
+                - -m
+                - torch.distributed.launch
+                - --nproc_per_node=1
+                - --nnodes=$(WORLD_SIZE)
+                - --node_rank=$(RANK)
+                - --master_addr=$(MASTER_ADDR)
+                - --master_port=$(MASTER_PORT)
+                - train.py
+                - --img=320
+                - --batch-size=24
+                - --epochs=20
+                - --data=coco128.yaml
+                - --weights=yolov3.pt
+              resources:
+                limits:
+                  nvidia.com/gpu: 1
+              volumeMounts:
+                - mountPath: /usr/src/app/datasets/
+                  name: datasets
