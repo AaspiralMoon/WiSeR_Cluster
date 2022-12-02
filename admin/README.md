@@ -56,7 +56,7 @@
   sudo nano /etc/exports
   /mnt/nfs_host  130.113.70.171(rw,sync,no_subtree_check) # include the ip addresses of all clients
   sudo exportfs -a # export configuration
-  sudo systemctl restart nfs-kernel-server # finish configuring restart the nfs services
+  sudo systemctl restart nfs-kernel-server # finish configuring and restart the nfs services
   ```
   
   - In worker node
