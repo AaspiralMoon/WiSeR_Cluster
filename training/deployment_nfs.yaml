@@ -17,11 +17,11 @@ spec:
             - name: datasets
               nfs:
                 server: 130.113.70.172
-                path: /mnt/nfs_share/datasets/renjie
+                path: /mnt/nfs_host/datasets/renjie
             - name: models
               nfs:
                 server: 130.113.70.172
-                path: /mnt/nfs_share/models/renjie
+                path: /mnt/nfs_host/models/renjie
           containers:
             - name: pytorch
               image: mcxrj/yolov3-ddp-training:v8
