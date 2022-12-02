@@ -60,7 +60,7 @@
   ```
   
   - In worker node
-    ```python
+  ```python
   sudo apt update && sudo apt install nfs-common # install nfs client dependencies
   
   # Optional
