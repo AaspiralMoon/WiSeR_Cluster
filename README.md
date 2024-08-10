@@ -31,7 +31,7 @@ $ sudo apt install nvidia-driver-510
 $ cd /home/Downloads
 $ wget https://developer.download.nvidia.com/compute/cuda/11.1.0/local_installers/cuda_11.1.0_455.23.05_linux.run
 $ sudo sh cuda_11.1.0_455.23.05_linux.run 
-$ wget
+$ (download cuDNN==8.0.4)
 $ tar -zxvf 
 
 # Install cuda
